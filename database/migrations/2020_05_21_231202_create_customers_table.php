@@ -20,7 +20,6 @@ class CreateCustomersTable extends Migration
             $table->string('tel', 20);
             $table->string('address', 255);
             $table->boolean('gender');
-            $table->date('birthday');
             $table->string('comment', 255)->nullable($value = true);
             $table->timestamps();
         });
