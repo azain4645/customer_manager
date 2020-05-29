@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Customer;
 use Illuminate\Support\Facades\DB;
 use App\Services\CheckFormData;
+use App\Http\Requests\StroeCustomerForm;
+use App\Http\Requests\StoreCustomerForm;
 
 class CustomerController extends Controller
 {
@@ -42,7 +44,7 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCustomerForm $request)
     {
         $customer = new Customer;
 

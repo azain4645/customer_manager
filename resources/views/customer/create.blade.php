@@ -13,28 +13,38 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
+
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                      <ul>
+                        @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                        @endforeach
+                      </ul>
+                    </div>
+                    @endif
+
                     <form method="POST" action="{{route('customer.store')}}">
                     @csrf
 
                     <div class="form-group">
                       <label for="">氏名</label>
-                      <input type="text" class="form-control" name="name">
+                      <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                     </div>
 
                     <div class="form-group">
                       <label for="">住所</label>
-                      <input type="text" class="form-control" name="address">
+                      <input type="text" class="form-control" name="address" value="{{ old('address') }}">
                     </div>
                     
                     <div class="form-group">
                       <label for="">メールアドレス</label>
-                      <input type="email" class="form-control" name="email">
+                      <input type="email" class="form-control" name="email" value="{{ old('email') }}">
                     </div>
 
                     <div class="form-group">
                       <label for="">電話番号</label>
-                      <input type="text" class="form-control" name="tel">
+                      <input type="text" class="form-control" name="tel" value="{{ old('tel') }}">
                     </div>
 
                     <div class="form-check form-check-inline">
@@ -48,7 +58,7 @@
 
                     <div class="mt-3 form-group">
                       <label for="">コメント</label>
-                      <textarea class="form-control" id="comment" rows="4"></textarea>
+                      <textarea class="form-control" id="comment" rows="4">{{ old('comment') }}</textarea>
                     </div>
 
                     <div class="form-check">
