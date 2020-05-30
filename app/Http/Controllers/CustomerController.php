@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Customer;
 use Illuminate\Support\Facades\DB;
 use App\Services\CheckFormData;
-use App\Http\Requests\StroeCustomerForm;
 use App\Http\Requests\StoreCustomerForm;
 
 class CustomerController extends Controller
@@ -22,7 +21,7 @@ class CustomerController extends Controller
         $customers = DB::table('customers')
         ->select('id', 'name','gender','email','created_at')
         ->orderBy('created_at', 'desc')
-        ->get();
+        ->paginate(20);
         //dd($customers);
 
         return view('customer.index', compact('customers'));
