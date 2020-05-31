@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     {
       DB::table('users')->insert([
         [
-        'name' => 'あああ',
+        'name' => 'テストユーザー',
         'email' => 'test@gmail.com',
         'password' => Hash::make('test')
         ],[
@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
         'email' => 'test2@gmail.com',
         'password' => Hash::make('test')
         ],[
-        'name' => 'ううう',
+        'name' => '開発者',
         'email' => 'azain0706@gmail.com',
         'password' => Hash::make('masamiti')
         ]

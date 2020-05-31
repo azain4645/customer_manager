@@ -69,10 +69,12 @@ class CustomerController extends Controller
     {
         $customer = Customer::find($id);
 
-        $gender = CheckFormData::checkGender($customer);
+        // $gender = CheckFormData::checkGender($customer);
+        //$gender = $customer->gender_text;
 
         //dd($customer);
-        return view('customer.show', compact('customer', 'gender'));
+        //return view('customer.show', compact('customer', 'gender'));
+        return view('customer.show', compact('customer'));
     }
 
     /**
